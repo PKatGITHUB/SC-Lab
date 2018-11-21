@@ -1,0 +1,48 @@
+[System]
+Name='lab(27.09.18)'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='speed'
+Range=[0 200]
+NumMFs=5
+MF1='too__slow':'trimf',[-80 0 60]
+MF2='slow':'trimf',[0 50 100]
+MF3='too__fast':'trimf',[140 200 280]
+MF4='optimum':'trimf',[60 100 140]
+MF5='fast':'trimf',[100 150 200]
+
+[Input2]
+Name='acceleration'
+Range=[-10 10]
+NumMFs=3
+MF1='deaccelerating':'trimf',[-18 -10 0]
+MF2='constant':'trimf',[-10 0 10]
+MF3='accelerating':'trimf',[0 10 18]
+
+[Input3]
+Name='distance_to_destiation'
+Range=[0 50]
+NumMFs=3
+MF1='very__close':'trimf',[-2 0 50]
+MF2='close':'trimf',[0 25 50]
+MF3='distant':'trimf',[0 50 70]
+
+[Output1]
+Name='power'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.4 0 0.4]
+MF2='mf2':'trimf',[0.1 0.5 0.9]
+MF3='mf3':'trimf',[0.6 1 1.4]
+
+[Rules]

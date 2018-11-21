@@ -21,7 +21,12 @@ Bval = list(map(float, s.split()))
 B = {}
 for x in range(len(Bmem)):
     B[Bmem[x]]=Bval[x]
+    if Bmem[x] not in A:
+        A[Bmem[x]]=0
 
+for x in range(len(Amem)):
+    if Amem[x] not in B:
+        B[Amem[x]]=0
 
 print("\n")
 
